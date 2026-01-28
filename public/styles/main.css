@@ -1,0 +1,88 @@
+
+body {
+  background-color: #000;
+  color: #ddd;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.page-intro {
+  margin-bottom: 4rem;
+  text-align: center;       
+  margin-top: 3rem; 
+}
+
+.page-intro .btn {
+  display: inline-block;    /* keeps button centered */
+}
+
+.site-title {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #3fb950;              
+  letter-spacing: 2px;
+  margin-top: 3rem;
+}
+
+.site-subtitle {
+  max-width: 600px;     
+  margin: 1rem auto 0; 
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.divider {
+  border-top: 1px solid #444;
+  margin: 3rem 0;
+}
+
+/* Book layout */
+.book-item {
+  align-items: flex-start; 
+  height: 100%;
+}
+
+.book-cover img {
+  width: 120px;
+  height: auto;
+  border: 1px solid #333;
+}
+
+/* Text styles */
+.book-title {
+  color: #7aa2ff;
+  margin-bottom: 0.2rem;
+}
+
+.book-author {
+  font-style: italic;
+  color: #aaa;
+}
+
+.book-meta {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.book-notes {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #1fa11f;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #168016;
+}
+
+.brand-title {
+  font-size: 2.2rem;        /* increased size */
+  font-weight: 600;
+  color: #7aa2ff;           /* soft blue (calm + bookish) */
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 6px rgba(122, 162, 255, 0.25);
+
+}
