@@ -7,13 +7,14 @@ Users can add, edit, and delete books, and book cover images are fetched dynamic
 
 ## ✨ Features
 
-- 📖 View a list of books sorted by **rating (highest first)**
-- ➕ Add a new book with ISBN, title, author, read date, and rating
+- 📖 Add books with ISBN, title, author, read date, rating, notes, and detailed review
+- 🖼️ Automatically fetch book cover images using **Open Library Covers API**
 - ✏️ Edit book details
-- 🗑️ Delete a book with a **custom confirmation modal**
-- 🖼️ Automatically fetch book cover images using ISBN
-- 📱 Responsive layout 
-- 🎨 Clean dark-themed UI
+- 🗑️ Delete books with confirmation prompt
+- ⭐ Sort books by rating (highest first)
+- 📑 “Read more / Read less” toggle for long reviews
+- 📱 Responsive layout (2 books per row on desktop, 1 on mobile)
+- 🎨 Clean dark-themed UIx
 
 ---
 
