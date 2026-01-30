@@ -37,4 +37,3 @@ Users can add, edit, and delete books, and book cover images are fetched dynamic
 
 
 
-**URL format:**
