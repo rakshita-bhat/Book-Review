@@ -61,16 +61,37 @@ app.post('/add', async (req,res)=>{
   
 });
 
-app.post('/delete', async (req, res)=>{
-  const { id } = req.body;
+app.get('/edit/:id', async (req, res)=>{
+  const id = req.params.id;
+  try{
+    const result = await db.query('SELECT * FROM books WHERE id = $1', [id]);
+    res.render('edit.ejs', {book : result.rows[0]});
+  }catch(err){
+    console.error(err);
+    res.status(500).send("Error retrieving book from the database");
+  }
+});
+
+app.post('/edit/:id', async (req,res)=>{
+  const {title, author, read_date,rating} = req.body;
+  const id = req.params.id;
+  try{
+    await db.query("UPDATE books SET title = $1, author = $2, read_date = $3, rating = $4 WHERE id = $5", [title, author, read_date, rating, id]);
+    res.redirect('/');
+  }catch(err){
+    console.error(err);
+  }
+});
+
+app.post('/delete/:id', async (req, res)=>{
+  const  id  = req.params.id;
   try{
     await db.query("DELETE FROM books WHERE id = $1", [id]);
     res.redirect('/');
   }catch(err){
     console.error(err);
     res.status(500).send("Error deleting book from the database");
-  }
-  
+  } 
 });
 
 app.listen(port, () => {
