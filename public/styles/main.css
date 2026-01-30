@@ -97,3 +97,37 @@ body {
   min-width: 80px;    /* SAME size buttons */
   text-align: center;
 }
+.book-review {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.book-review {
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;   /* ↓ reduce gap */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.book-review.collapsed {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* EXACTLY 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.2rem;     /* small, intentional gap */
+  color: #7aa2ff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}

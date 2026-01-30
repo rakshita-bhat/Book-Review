@@ -5,10 +5,7 @@
   <title>Add Book</title>
 
   <!-- Bootstrap -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/styles/main.css">
@@ -16,20 +13,18 @@
 
 <body>
 
-  <div class="container">
+  <div class="container-lg">
 
-    <!-- Page Intro -->
     <div class="page-intro">
       <h1 class="site-title">Add a New Book</h1>
       <p class="site-subtitle">
-        Add a book you’ve read along with your personal review.
+        Add a book along with your personal review.
       </p>
     </div>
 
     <hr class="divider">
 
-    <!-- Add Book Form -->
-    <form action="/add" method="POST" class="row g-3 mt-4">
+    <form action="/add" method="POST" class="row g-3">
 
       <div class="col-md-6">
         <label class="form-label">ISBN</label>
@@ -41,28 +36,39 @@
         <input type="text" name="title" class="form-control" required>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
         <label class="form-label">Author</label>
         <input type="text" name="author" class="form-control" required>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <label class="form-label">Rating (1–10)</label>
         <input type="number" name="rating" min="1" max="10" class="form-control" required>
       </div>
 
-      <div class="col-md-3">
+      <div class="col-md-4">
         <label class="form-label">Read Date</label>
         <input type="date" name="read_date" class="form-control" required>
       </div>
 
+      <div class="col-12">
+        <label class="form-label">Detailed Review</label>
+        <textarea
+          name="review"
+          rows="6"
+          class="form-control"
+          placeholder="Write your detailed review here..."
+        ></textarea>
+      </div>
+      
+      
 
-      <div class="col-12 mt-3">
+      <div class="col-12 mt-4 text-center">
         <button type="submit" class="btn btn-success">
           Save Book
         </button>
 
-        <a href="/" class="btn btn-secondary ms-2">
+        <a href="/" class="btn btn-secondary">
           Cancel
         </a>
       </div>
@@ -70,6 +76,3 @@
     </form>
 
   </div>
-
-</body>
-</html>

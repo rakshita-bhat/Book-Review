@@ -24,7 +24,7 @@ let books = [{isbn:  '0385472579' ,
     read_date: '2023-04-15',
     author : 'Joseph Conrad',
     rating: 8,
-    notes:'A collection of thoughtful essays on various topics.'}];
+    review:'A collection of thoughtful essays on various topics.'}];
 
  
 
@@ -50,9 +50,9 @@ app.get('/add', (req, res)=>{
 });
 
 app.post('/add', async (req,res)=>{
-  const { isbn, title, author, read_date, rating, notes } = req.body;
+  const { isbn, title, author, read_date, rating, review } = req.body;
   try{
-    await db.query('INSERT INTO books (isbn, title, author, read_date, rating) VALUES ($1, $2, $3, $4, $5)', [isbn, title, author, read_date, rating]);
+    await db.query('INSERT INTO books (isbn, title, author, read_date, rating,review) VALUES ($1, $2, $3, $4, $5,$6)', [isbn, title, author, read_date, rating,review]);
     res.redirect('/');
   }catch(err){
     console.error(err);
@@ -73,10 +73,10 @@ app.get('/edit/:id', async (req, res)=>{
 });
 
 app.post('/edit/:id', async (req,res)=>{
-  const {title, author, read_date,rating} = req.body;
+  const {title, author, read_date,rating,review} = req.body;
   const id = req.params.id;
   try{
-    await db.query("UPDATE books SET title = $1, author = $2, read_date = $3, rating = $4 WHERE id = $5", [title, author, read_date, rating, id]);
+    await db.query("UPDATE books SET title = $1, author = $2, read_date = $3, rating = $4, review = $5 WHERE id = $6", [title, author, read_date, rating, review, id]);
     res.redirect('/');
   }catch(err){
     console.error(err);
